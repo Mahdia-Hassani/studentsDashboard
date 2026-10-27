@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <h1>Students Dashboard</h1>
+          <p class="description">
+            Manage students and check their performance.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Dashboard Summary -->
+
+      <section class="summary-section">
+        <h2>Dashboard Overview</h2>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <p>Total Students</p>
+            <h3 id="totalStudents">0</h3>
+          </div>
+
+          <div class="summary-card">
+            <p>Passed Students</p>
+            <h3 id="passedStudents">0</h3>
+          </div>
+
+          <div class="summary-card">
+            <p>Failed Students</p>
+            <h3 id="failedStudents">0</h3>
+          </div>
+
+          <div class="summary-card">
+            <p>Average Score</p>
+            <h3 id="averageScore">0</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration Form -->
+
+      <section class="form-section">
+        <div class="section-title">
+          <div>
+            <h2>Add New Student</h2>
+            <p>Fill in the information to register a student.</p>
+          </div>
+        </div>
+
+        <form id="studentForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="studentName">Student Name</label>
+              <input
+                type="text"
+                id="studentName"
+                placeholder="Enter student name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="courseName">Course Name</label>
+              <input
+                type="text"
+                id="courseName"
+                placeholder="Enter course name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="studentScore">Score</label>
+              <input
+                type="number"
+                id="studentScore"
+                placeholder="Enter score (0-100)"
+                min="0"
+                max="100"
+                step="any"
+              />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <p id="formMessage" aria-live="polite"></p>
+            <button type="submit">Add Student</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Student Records -->
+
+      <section class="records-section">
+        <div class="records-header">
+          <div>
+            <h2>Student Records</h2>
+            <p>List of all registered students.</p>
+          </div>
+
+          <span id="recordCount">0 students</span>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Score</th>
+                <th>Result</th>
+              </tr>
+            </thead>
+
+            <tbody id="studentTableBody"></tbody>
+          </table>
+        </div>
+
+        <p class="table-note">Students need at least 50 points to pass.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
